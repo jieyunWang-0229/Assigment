@@ -1,0 +1,36 @@
+﻿@model FIT5032_Assigment.Models.Categorydetail
+
+    @{
+        ViewBag.Title = "UpdateCategory";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+        <p class="mb-4">You can view category here.</p>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Categories</h6>
+                <a href="#" class="btn btn-info pull-right fa-plus">Add New</a>
+            </div>
+            <div class="card-body">
+                @Html.HiddenFor(m => m.CategoryId)
+                <div class="form-group">
+                    <label class="control-label">Category Name</label>
+
+                    @Html.TextBoxFor(m=>m.CategoryName,new { @class="from-control",placeholder="Enter category name",  required="required",autofocus="autofocus"})
+                    
+
+                </div>
+
+                <a onclick="window.histroy.back();" class="btn btn-danger">Cancel</a>
+                <input type="submit" class="btn btn-primary" value="Save" />
+                </div>
+            </div>
+        </div>
+

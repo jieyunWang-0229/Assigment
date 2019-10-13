@@ -1,0 +1,86 @@
+﻿@model FIT5032_Assigment.Models.Attraction
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Attraction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AttractionName)
+        </dt>
+
+        <dd class="description">
+            @Html.DisplayFor(model => model.AttractionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd class="longitude">
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd class="latitude">
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Detail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detail)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Image)*@
+            <img class="img-thumbnail" scr="@Url.Content("~/Uploads/" + Model.Image)" />
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+    </dl>
+</div>
+
+
+@*map*@
+<div id='map' style='width: 400px; height: 300px;'></div>
+
+@section Scripts {     
+    @Scripts.Render("~/bundles/mapbox")
+ }
+
+<p>
+   
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
